@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="demo.css" rel="stylesheet"/>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+
+        .mycontainer {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+        }
+
+        .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+
+        /* 清除浮动 */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* 响应式布局 layout - 在屏幕宽度小于 300px 时， 设置为上下堆叠元素 */
+        @media screen and (max-width: 300px) {
+            .col-25, .col-75, input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        td, th {
+            padding: 0;
+        }
+
+        .pure-table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            empty-cells: show;
+            border: 1px solid #cbcbcb;
+        }
+
+        .pure-table caption {
+            color: #000;
+            font: italic 85%/1 arial, sans-serif;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        .pure-table td, .pure-table th {
+            border-left: 1px solid #cbcbcb;
+            border-width: 0 0 0 1px;
+            font-size: inherit;
+            margin: 0;
+            overflow: visible;
+            padding: .8em 1em;
+        }
+
+        .pure-table thead {
+            background-color: #e0e0e0;
+            color: #000;
+            text-align: left;
+            vertical-align: bottom;
+        }
+
+        .pure-table td {
+            background-color: transparent;
+        }
+
+        .pure-table-bordered td {
+            border-bottom: 1px solid #cbcbcb;
+        }
+
+        .pure-table-bordered tbody > tr:last-child > td {
+            border-bottom-width: 0;
+        }
+
+        /*按钮样式*/
+        .btn {
+            padding: 5px 10px;
+            height: 30px; /*设置按钮高度*/
+            color: white; /*字体颜色*/
+            background-color: dodgerblue; /*按钮背景颜色*/
+            border-radius: 3px; /*让按钮变得圆滑一点*/
+            font-family: '楷体'; /*字体设置为楷体*/
+            font-size: 17px; /*设置字体大小*/
+            text-align: center; /*字体居中*/
+            cursor: pointer; /*设置鼠标箭头手势*/
+            text-decoration: none; /*去除下划线*/
+        }
+
+
+    </style>
+</head>
+<body>
+
+<h2>响应式表单</h2>
+<p>响应式表带可以根据浏览器窗口的大小重新布局各个元素，我们可以通过重置浏览器窗口大小来查看效果：</p>
+
+<div class="mycontainer" style="width: 600px;margin: 20px auto;">
+    <form action="#" method="post" style="">
+        <div class="row">
+            <div class="col-25">
+                <label for="fname">First Name</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="lname">Last Name</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="country">Country</label>
+            </div>
+            <div class="col-75">
+                <select id="country" name="country">
+                    <option value="australia">Australia</option>
+                    <option value="canada">Canada</option>
+                    <option value="usa">USA</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="subject">Subject</label>
+            </div>
+            <div class="col-75">
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+            </div>
+        </div>
+        <div class="row" style="text-align: center;">
+            <button type="submit" style="background-color: #45a049;">提交</button>
+            <button type="reset" style="background-color: #aaa;">重置</button>
+        </div>
+    </form>
+</div>
+
+
+<div style="height: 100px;"></div>
+
+
+<table class="pure-table pure-table-bordered" width="100%">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Year</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td>Honda</td>
+        <td>Accord</td>
+        <td>2009</td>
+        <td>
+            <a class="btn" href="#">删除</a>
+            <a class="btn" href="#">修改</a>
+        </td>
+    </tr>
+
+    <tr>
+        <td>2</td>
+        <td>Toyota</td>
+        <td>Camry</td>
+        <td>2012</td>
+        <td>
+            <a class="btn" href="#">删除</a>
+            <a class="btn" href="#">修改</a>
+        </td>
+    </tr>
+
+    <tr>
+        <td>3</td>
+        <td>Hyundai</td>
+        <td>Elantra</td>
+        <td>2010</td>
+        <td>
+            <a class="btn" href="#">删除</a>
+            <a class="btn" href="#">修改</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<div style="height: 100px;"></div>
+
+</body>
+</html>
